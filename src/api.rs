@@ -12,15 +12,15 @@ use int_enum::IntEnum;
 #[repr(C)]
 pub struct VehicleSpec {
     /// ブレーキノッチ数
-    brake_notches: c_int,
+    pub brake_notches: c_int,
     /// 力行ノッチ数
-    power_notches: c_int,
+    pub power_notches: c_int,
     /// ATS確認ノッチ
-    ats_notch: c_int,
+    pub ats_notch: c_int,
     /// ブレーキ弁67度に相当するノッチ
-    b67_notch: c_int,
+    pub b67_notch: c_int,
     /// 編成両数
-    cars: c_int
+    pub cars: c_int
 }
 
 /// 車両の状態量
@@ -28,23 +28,23 @@ pub struct VehicleSpec {
 #[repr(C)]
 pub struct VehicleState {
     /// 列車位置 [m]
-    location: c_double,
+    pub location: c_double,
     /// 列車速度 [km/h]
-    speed: c_float,
+    pub speed: c_float,
     /// 現在時刻 [ms]
-    time: c_int,
+    pub time: c_int,
     /// ブレーキシリンダ圧力 [kPa]
-    bc_pressure: c_float,
+    pub bc_pressure: c_float,
     /// 元空気ダメ圧力 [kPa]
-    mr_pressure: c_float,
+    pub mr_pressure: c_float,
     /// 釣り合い空気ダメ圧力 [kPa]
-    er_pressure: c_float,
+    pub er_pressure: c_float,
     /// ブレーキ管圧力 [kPa]
-    bp_pressure: c_float,
+    pub bp_pressure: c_float,
     /// 直通管圧力 [kPa]
-    sap_pressure: c_float,
+    pub sap_pressure: c_float,
     /// 電流 [A]
-    current: c_float
+    pub current: c_float
 }
 
 /// 車上子で受け取った情報
@@ -52,13 +52,13 @@ pub struct VehicleState {
 #[repr(C)]
 pub struct BeaconData {
     /// 地上子種別
-    beacon_type: c_int,
+    pub beacon_type: c_int,
     /// 対となるセクションの信号
-    signal: c_int,
+    pub signal: c_int,
     /// 対となるセクションまでの距離 [m]
-    distance: c_float,
+    pub distance: c_float,
     /// 地上子に設定された任意の値
-    optional: c_int
+    pub optional: c_int
 }
 
 /// Bve trainsim に渡すハンドル制御値
@@ -66,13 +66,13 @@ pub struct BeaconData {
 #[repr(C)]
 pub struct Handles {
     /// ブレーキノッチ
-    brake: c_int,
+    pub brake: c_int,
     /// 力行ノッチ
-    power: c_int,
+    pub power: c_int,
     /// レバーサー位置
-    reverser: c_int,
+    pub reverser: c_int,
     /// 定速制御の状態
-    constant_speed: c_int
+    pub constant_speed: c_int
 }
 
 /// ATS Plug-in Version
