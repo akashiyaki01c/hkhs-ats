@@ -5,10 +5,15 @@ use crate::api::{Ats, Handles, ConstantSpeed};
 /// ATSプラグインの実体
 #[derive(Default)]
 pub struct HkhsAts {
-    user_notch: UserNotch
+    vehicle_spec: crate::api::VehicleSpec,
+    user_notch: UserNotch,
 }
 
 impl Ats for HkhsAts {
+
+    fn set_vehicle_spec(&mut self, _spec: crate::api::VehicleSpec) {
+        self.vehicle_spec = _spec;
+    }
 
     fn elapse(&mut self, _state: crate::api::VehicleState, _panel: &[c_int], _sound: &[c_int]) -> crate::api::Handles {
         Handles {
